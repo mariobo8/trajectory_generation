@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+project(trajectory_generation)
+
+# Find Eigen package
+find_package(Eigen3 REQUIRED)
+
+# Add the include directory for Eigen
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+
+# Add your source files
+add_executable(trajectory_gen src/trajectory_gen.cpp)
+target_include_directories(trajectory_gen PRIVATE ${EIGEN3_INCLUDE_DIR})

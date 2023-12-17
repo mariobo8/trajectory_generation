@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/mariobozza/Desktop/trajectory_generation/build",
+  "command": "/usr/bin/clang++  -I/usr/local/include/eigen3 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -o CMakeFiles/trajectory_gen.dir/src/trajectory_gen.cpp.o -c /Users/mariobozza/Desktop/trajectory_generation/src/trajectory_gen.cpp",
+  "file": "/Users/mariobozza/Desktop/trajectory_generation/src/trajectory_gen.cpp",
+  "output": "CMakeFiles/trajectory_gen.dir/src/trajectory_gen.cpp.o"
+}
+]

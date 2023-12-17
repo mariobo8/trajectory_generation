@@ -1,0 +1,3 @@
+/Users/mariobozza/Desktop/trajectory_generation/CMakeFiles/trajectory_gen.dir
+/Users/mariobozza/Desktop/trajectory_generation/CMakeFiles/edit_cache.dir
+/Users/mariobozza/Desktop/trajectory_generation/CMakeFiles/rebuild_cache.dir

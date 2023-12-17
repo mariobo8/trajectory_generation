@@ -1,0 +1,47 @@
+function [x, y, psi, x_dot, y_dot, psi_dot] = generate_trajectory()
+    % Define parameters for the S-shaped path
+    amplitude = 20;   % Amplitude of the S-shape
+    frequency = 0.1;  % Frequency of the S-shape
+    time_interval = 10;  % Total time interval for the path
+    dt = 0.01;  % Time step
+
+    % Generate the S-shaped path
+    t = 0:dt:time_interval;
+    x = amplitude * sin(2 * pi * frequency * t);
+    y = amplitude * sin(4 * pi * frequency * t);
+    psi = atan(y ./ x);
+    %psi = unwrap(psi);
+
+    % Calculate velocities
+    x_dot = gradient(x) / dt;
+    y_dot = gradient(y) / dt;
+    psi_dot = gradient(psi) / dt;
+
+
+    % Plot the S-shaped path, velocities, and heading
+    figure;
+    subplot(2, 1, 1);
+    plot(t, x, 'b-', t, y, 'r-', 'LineWidth', 2);
+    legend('X-axis', 'Y-axis');
+    xlabel('Time');
+    ylabel('Position');
+    title('S-shaped Path');
+
+    subplot(2, 1, 2);
+    plot(t, x_dot, 'b-', t, y_dot, 'r-', 'LineWidth', 2);
+    legend('Vx', 'Vy');
+    xlabel('Time');
+    ylabel('Velocity');
+    title('Velocities');
+
+    figure
+    plot(t, psi, 'g-', t, psi_dot, 'b-', 'LineWidth', 2);
+    xlabel('Time');
+    ylabel('Heading');
+    title('Heading');
+
+    % Save the path, velocities, and heading to a file
+    pos = [x; y; psi];
+    vel = [x_dot; y_dot; psi_dot];
+    save('trajectory.mat', 'pos', 'vel');
+end
